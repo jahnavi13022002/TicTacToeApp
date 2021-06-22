@@ -51,6 +51,7 @@ public class GameLogic {
 
              winType =new int[]{r,0,1};
                isWinner=true;
+               break;
            }
 
         }
@@ -62,6 +63,7 @@ public class GameLogic {
                 winType =new int[]{0,c,2};
 
                 isWinner=true;
+                break;
             }
 
         }
@@ -75,7 +77,7 @@ public class GameLogic {
 
 
 //type 4--> +ve diagonal line
-            if(gameBoard[2][0]==gameBoard[1][1]&&gameBoard[2][0]==gameBoard[1][2]&&gameBoard[2][0]!=0){
+            if(gameBoard[2][0]==gameBoard[1][1]&&gameBoard[2][0]==gameBoard[0][2]&&gameBoard[2][0]!=0){
 
                 winType =new int[]{2,2,4};
                 isWinner=true;
@@ -112,6 +114,9 @@ public class GameLogic {
             for(int c=0;c<3;c++)
                 gameBoard[r][c]=0;
         }
+
+
+
         player=1;
         playAgainBTN.setVisibility(View.GONE);
         homeBTN.setVisibility(View.GONE);
